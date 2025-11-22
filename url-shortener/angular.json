@@ -3,31 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ul-shortner": {
+    "url-shortener": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "css",
-          "skipTests": false,
-          "inlineTemplate": false,
-          "inlineStyle": false,
-          "standalone": false,
-          "flat": false
-        },
-        "@schematics/angular:directive": {
-          "skipTests": false,
-          "standalone": false,
-          "flat": false
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": false,
-          "standalone": false,
-          "flat": false
-        },
-        "@schematics/angular:service": {
-          "skipTests": false
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -36,7 +14,6 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -44,7 +21,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"]
+            "styles": [
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -74,10 +53,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ul-shortner:build:production"
+              "buildTarget": "url-shortener:build:production"
             },
             "development": {
-              "buildTarget": "ul-shortner:build:development"
+              "buildTarget": "url-shortener:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +67,6 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
@@ -96,7 +74,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"]
+            "styles": [
+              "src/styles.css"
+            ]
           }
         }
       }
