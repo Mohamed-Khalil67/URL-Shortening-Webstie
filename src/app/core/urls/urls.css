@@ -1,0 +1,19 @@
+/* ============================================
+   Shortened Links
+   ============================================ */
+.shortened-links {
+  background-color: var(--light-gray);
+  padding: 0 24px 80px;
+}
+
+@media (min-width: 768px) {
+  .shortened-links {
+    padding: 0 48px 80px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .shortened-links {
+    padding: 0 165px 80px;
+  }
+}

@@ -52,3 +52,36 @@ body {
     padding: 0 165px;
   }
 }
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn-primary {
+  background-color: var(--cyan);
+  color: var(--white);
+  border: none;
+  border-radius: 28px;
+  padding: 12px 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 14px 40px;
+  font-size: 18px;
+}
+
+.btn-square {
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 18px;
+  white-space: nowrap;
+}

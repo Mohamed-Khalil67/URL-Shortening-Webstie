@@ -1,0 +1,113 @@
+/* ============================================
+   Shorten Section
+   ============================================ */
+.shorten-section {
+  background-color: var(--light-gray);
+  padding: 0 24px 80px;
+  margin-top: -80px;
+  position: relative;
+  z-index: 1;
+}
+
+.shorten-form {
+  background: url('/images/bg-shorten-mobile.svg') no-repeat top right;
+  background-color: var(--dark-violet);
+  background-size: cover;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 80px;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.shorten-form input {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+
+.shorten-form input::placeholder {
+  color: var(--grayish-violet);
+}
+
+.shorten-form input:invalid:not(:placeholder-shown) {
+  border: 3px solid var(--red);
+}
+
+.error-message {
+  display: none;
+  color: var(--red);
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.shorten-form input:invalid:not(:placeholder-shown) + .error-message {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .shorten-section {
+    padding: 0 48px 80px;
+  }
+
+  .shorten-form {
+    background-image: url('/images/bg-shorten-desktop.svg');
+    flex-direction: row;
+    padding: 48px 64px;
+    gap: 24px;
+  }
+
+  .shorten-form input {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .shorten-section {
+    padding: 0 165px 80px;
+  }
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn-primary {
+  background-color: var(--cyan);
+  color: var(--white);
+  border: none;
+  border-radius: 28px;
+  padding: 12px 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 14px 40px;
+  font-size: 18px;
+}
+
+.btn-square {
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 18px;
+  white-space: nowrap;
+}

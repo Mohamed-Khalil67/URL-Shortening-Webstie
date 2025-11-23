@@ -1,0 +1,121 @@
+/* ============================================
+   Navigation
+   ============================================ */
+header {
+  background-color: var(--white);
+  padding: 24px 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.nav-brand .logo-img {
+  height: 33px;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 32px;
+  flex: 1;
+  margin-left: 48px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--grayish-violet);
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--very-dark-violet);
+}
+
+.nav-actions {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-login {
+  text-decoration: none;
+  color: var(--grayish-violet);
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-login:hover {
+  color: var(--very-dark-violet);
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: var(--grayish-violet);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-actions {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn-primary {
+  background-color: var(--cyan);
+  color: var(--white);
+  border: none;
+  border-radius: 28px;
+  padding: 12px 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 14px 40px;
+  font-size: 18px;
+}
+
+.btn-square {
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 18px;
+  white-space: nowrap;
+}

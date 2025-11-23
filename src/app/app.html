@@ -1,26 +1,4 @@
-<!-- Navigation -->
-<header>
-  <nav class="container">
-    <div class="nav-brand">
-      <img src="/images/logo.svg" alt="Shortly" class="logo-img" />
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Resources</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="#" class="nav-login">Login</a>
-      <a href="#" class="btn-primary">Sign Up</a>
-    </div>
-    <button class="mobile-menu-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-</header>
-
+<app-header></app-header>
 <!-- Hero Section -->
 <section class="hero">
   <div class="container hero-container">
@@ -32,132 +10,15 @@
       <button class="btn-primary btn-large">Get Started</button>
     </div>
     <div class="hero-image">
-      <img src="/images/illustration-working.svg" alt="Working illustration" />
+      <img src="images/illustration-working.svg" alt="Working illustration" />
     </div>
   </div>
 </section>
 
-<!-- URL Shortening Form -->
-<section class="shorten-section">
-  <div class="container">
-    <form class="shorten-form">
-      <div class="input-wrapper">
-        <input type="url" placeholder="Shorten a link here..." required />
-        <span class="error-message"></span>
-      </div>
-      <button type="submit" class="btn-primary btn-square">Shorten It!</button>
-    </form>
-  </div>
-</section>
+<main>
+  <app-url-shortener></app-url-shortener>
+  <app-urls></app-urls>
+</main>
 
-<!-- Shortened Links List -->
-<section class="shortened-links">
-  <!-- Shortened links will be displayed here -->
-</section>
-
-<!-- Features Section -->
-<section class="features">
-  <div class="container">
-    <div class="features-header">
-      <h2>Advanced Statistics</h2>
-      <p>
-        Track how your links are performing across the web with our advanced statistics dashboard.
-      </p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <img src="/images/icon-brand-recognition.svg" alt="Brand Recognition" />
-        </div>
-        <h3>Brand Recognition</h3>
-        <p>
-          Boost your brand recognition with each click. Generic links don't mean a thing. Branded
-          links help instil confidence in your content.
-        </p>
-      </div>
-
-      <div class="feature-card feature-card-offset">
-        <div class="feature-icon">
-          <img src="/images/icon-detailed-records.svg" alt="Detailed Records" />
-        </div>
-        <h3>Detailed Records</h3>
-        <p>
-          Gain insights into who is clicking your links. Knowing when and where people engage with
-          your content helps inform better decisions.
-        </p>
-      </div>
-
-      <div class="feature-card feature-card-offset-2">
-        <div class="feature-icon">
-          <img src="/images/icon-fully-customizable.svg" alt="Fully Customizable" />
-        </div>
-        <h3>Fully Customizable</h3>
-        <p>
-          Improve brand awareness and content discoverability through customizable links,
-          supercharging audience engagement.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-<section class="cta">
-  <div class="container">
-    <h2>Boost your links today</h2>
-    <button class="btn-primary btn-large">Get Started</button>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="/images/logo.svg" alt="Shortly" class="footer-logo" />
-      </div>
-
-      <div class="footer-links">
-        <div class="footer-column">
-          <h4>Features</h4>
-          <ul>
-            <li><a href="#">Link Shortening</a></li>
-            <li><a href="#">Branded Links</a></li>
-            <li><a href="#">Analytics</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Developers</a></li>
-            <li><a href="#">Support</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook"><img src="/images/icon-facebook.svg" alt="Facebook" /></a>
-        <a href="#" aria-label="Twitter"><img src="/images/icon-twitter.svg" alt="Twitter" /></a>
-        <a href="#" aria-label="Pinterest"
-          ><img src="/images/icon-pinterest.svg" alt="Pinterest"
-        /></a>
-        <a href="#" aria-label="Instagram"
-          ><img src="/images/icon-instagram.svg" alt="Instagram"
-        /></a>
-      </div>
-    </div>
-  </div>
-</footer>
+<app-body></app-body>
+<app-footer></app-footer>
