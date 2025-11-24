@@ -1,0 +1,20 @@
+<div class="shortened-link-item">
+  <span class="original-url">
+    {{ original() }}
+  </span>
+
+  <div class="shortened-actions">
+    <a class="short-url" [href]="shortened()" target="_blank" rel="noopener noreferrer">
+      {{ shortened() }}
+    </a>
+
+    <button
+      type="button"
+      class="btn-primary btn-square"
+      [class.btn-secondary]="copied()"
+      (click)="copy()"
+    >
+      {{ copied() ? 'Copied!' : 'Copy' }}
+    </button>
+  </div>
+</div>

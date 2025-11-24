@@ -1,4 +1,13 @@
+<!-- top: form -->
+<app-url-shortener (urlCreated)="handleUrlCreated($event)"></app-url-shortener>
+
 <!-- Shortened Links List -->
 <section class="shortened-links">
-  <!-- Shortened links will be displayed here -->
+  <div class="container">
+    @if (urls().length === 0) {
+    <p class="empty-message">No links yet. Shorten something above 👆</p>
+    } @else { @for (item of urls(); track item.id) {
+    <app-url [original]="item.original" [shortened]="item.shortened"></app-url>
+    } }
+  </div>
 </section>
