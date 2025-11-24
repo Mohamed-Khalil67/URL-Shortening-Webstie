@@ -1,0 +1,79 @@
+/* ============================================
+   Shortened Link Item (aligned with shorten-form)
+   ============================================ */
+
+.shortened-link-item {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Original URL */
+
+.original-url {
+  font-size: 16px;
+  color: var(--dark-violet);
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 12px;
+}
+
+/* Shortened URL + actions */
+
+.shortened-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.short-url {
+  color: var(--cyan);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+/* Button inherits .btn-primary and .btn-square from url-shortener.css */
+
+.shortened-actions button {
+  width: 100%;
+}
+
+/* Copied state: keep same shape, darker look */
+.shortened-actions button.btn-secondary {
+  background-color: var(--dark-violet);
+}
+
+/* ============================================
+   Desktop Layout (same breakpoint as form)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .shortened-link-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+  }
+
+  .original-url {
+    border-bottom: none;
+    padding-bottom: 0;
+    flex: 1;
+  }
+
+  .shortened-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    flex: 1;
+  }
+
+  .shortened-actions button {
+    width: auto;
+  }
+}
