@@ -27,7 +27,7 @@ export class UrlShortener {
 
           this.urlCreated.emit({
             original,
-            shortened, // already a string like "https://tinyurl.com/xxxx"
+            shortened,
           });
         },
         error: (err) => {
