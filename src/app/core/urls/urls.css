@@ -1,0 +1,36 @@
+/* ============================================
+   Shortened Links Section
+   ============================================ */
+
+.shortened-links {
+  background-color: var(--light-gray);
+  padding: 40px 24px 80px;
+}
+
+.shortened-links .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Empty state */
+
+.empty-message {
+  text-align: center;
+  color: var(--grayish-violet);
+  font-size: 16px;
+  margin-top: 32px;
+}
+
+/* Desktop adjustments */
+
+@media (min-width: 768px) {
+  .shortened-links {
+    padding: 40px 48px 80px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .shortened-links {
+    padding: 40px 165px 80px;
+  }
+}

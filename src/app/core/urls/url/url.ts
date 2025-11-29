@@ -7,19 +7,15 @@ import { Component, input, signal } from '@angular/core';
   styleUrl: './url.css',
 })
 export class Url {
-  // signal inputs (modern @Input)
   original = input<string>();
   shortened = input<string>();
 
   copied = signal(false);
 
   copy() {
-    const value = this.shortened();
-    if (!value) return;
+    navigator.clipboard.writeText(this.shortened()!);
+    this.copied.set(true);
 
-    navigator.clipboard.writeText(value).then(() => {
-      this.copied.set(true);
-      setTimeout(() => this.copied.set(false), 2000);
-    });
+    setTimeout(() => this.copied.set(false), 1500);
   }
 }

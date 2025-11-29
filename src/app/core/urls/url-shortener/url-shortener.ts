@@ -1,43 +1,38 @@
-import { Component, output, signal } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Component, output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-url-shortener',
-  imports: [ReactiveFormsModule],
+  imports: [FormsModule],
   templateUrl: './url-shortener.html',
   styleUrl: './url-shortener.css',
 })
 export class UrlShortener {
   urlCreated = output<{ original: string; shortened: string }>();
 
-  isLoading = signal(false);
-  showError = signal(false);
+  constructor(private http: HttpClient) {}
 
-  form: FormGroup;
+  shorten(value: string) {
+    if (!value) return;
 
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      url: ['', [Validators.required]],
-    });
-  }
+    const original = value.trim();
+    const apiUrl = 'https://tinyurl.com/api-create.php?url=' + encodeURIComponent(original);
 
-  shorten() {
-    this.showError.set(false);
+    this.http
+      .get(apiUrl, { responseType: 'text' as const }) // IMPORTANT
+      .subscribe({
+        next: (shortened) => {
+          console.log('Shortened URL:', shortened);
 
-    if (this.form.invalid) {
-      this.showError.set(true);
-      return;
-    }
-
-    this.isLoading.set(true);
-    const original = this.form.value.url!;
-
-    // fake short URL for now – replace with API later
-    const shortened = 'https://rel.ink/' + Math.random().toString(36).substring(2, 7);
-
-    this.urlCreated.emit({ original, shortened });
-
-    this.form.reset();
-    this.isLoading.set(false);
+          this.urlCreated.emit({
+            original,
+            shortened, // already a string like "https://tinyurl.com/xxxx"
+          });
+        },
+        error: (err) => {
+          console.error('Error shortening URL:', err);
+        },
+      });
   }
 }

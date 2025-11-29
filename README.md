@@ -57,3 +57,12 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Notes
+
+- Forms Module is needed always for ngSubmit usage.
+- in url comp , `original = input<string>();`
+  - This gives you a signal which:
+  - receives data from the parent
+    - updates reactively
+    - is read by calling `original()`

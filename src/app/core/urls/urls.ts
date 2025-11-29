@@ -13,10 +13,8 @@ type UrlItem = { id: number; original: string; shortened: string };
 })
 export class Urls {
   private nextId = 1;
-
   urls = signal<UrlItem[]>([]);
 
-  // called when child UrlShortenerComponent emits
   handleUrlCreated(event: { original: string; shortened: string }) {
     const item: UrlItem = {
       id: this.nextId++,
